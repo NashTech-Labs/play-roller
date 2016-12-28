@@ -27,6 +27,6 @@ projectFilesBackup*
 /db
 /modules
 /target
-project
-.sbtserver/
+.sbtserver/*
 .sbtserver
+.sbtserver.lock

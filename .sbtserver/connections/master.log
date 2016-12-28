@@ -1,1 +1,7 @@
 New log file opened at Wed Dec 28 22:13:01 IST 2016 by 7415@arpit-Lenovo
+Taking next connection to: 34607
+New client attempting to connect on port: 59952-34607
+  Address = /127.0.1.1:34607
+This client on port 59952 has uuid 07e26a5c-5194-4449-8cb8-e444a6b08f37 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-07e26a5c-5194-4449-8cb8-e444a6b08f37
+Taking next connection to: 34607
