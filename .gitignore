@@ -28,3 +28,5 @@ projectFilesBackup*
 /modules
 /target
 project
+.sbtserver/
+.sbtserver

@@ -1,9 +1,9 @@
 import com.google.inject.AbstractModule;
 import java.time.Clock;
 
-import services.ApplicationTimer;
-import services.AtomicCounter;
-import services.Counter;
+import com.knoldus.services.ApplicationTimer;
+import com.knoldus.services.AtomicCounter;
+import com.knoldus.services.Counter;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
