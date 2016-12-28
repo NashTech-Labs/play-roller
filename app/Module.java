@@ -1,9 +1,13 @@
-import com.google.inject.AbstractModule;
 import java.time.Clock;
 
+import com.google.inject.AbstractModule;
+import com.knoldus.dao.EmployeeDao;
+import com.knoldus.dao.impl.EmployeeDaoImpl;
 import com.knoldus.services.ApplicationTimer;
 import com.knoldus.services.AtomicCounter;
 import com.knoldus.services.Counter;
+import com.knoldus.services.EmployeeService;
+import com.knoldus.services.impl.EmployeeServiceImpl;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -26,6 +30,8 @@ public class Module extends AbstractModule {
         bind(ApplicationTimer.class).asEagerSingleton();
         // Set AtomicCounter as the implementation for Counter.
         bind(Counter.class).to(AtomicCounter.class);
+        bind(EmployeeService.class).to(EmployeeServiceImpl.class);
+        bind(EmployeeDao.class).to(EmployeeDaoImpl.class);
     }
 
 }
