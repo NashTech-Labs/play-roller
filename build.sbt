@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   javaJpa,
   cache,
   javaWs,
-  "org.hibernate" % "hibernate-entitymanager" % "5.2.5.Final",
+  "org.hibernate" % "hibernate-entitymanager" % "5.2.5.Final" exclude("dom4j", "dom4j"),
   "mysql" % "mysql-connector-java" % "6.0.5",
   "dom4j" % "dom4j" % "1.6.1" intransitive()
 )
@@ -18,3 +18,5 @@ libraryDependencies ++= Seq(
 libraryDependencies += evolutions
 
 fork in run := true
+
+javaOptions in Test += "-Dconfig.file=conf/application.test.conf"

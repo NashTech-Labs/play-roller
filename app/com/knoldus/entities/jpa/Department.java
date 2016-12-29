@@ -1,6 +1,7 @@
-package com.knoldus.entities;
+package com.knoldus.entities.jpa;
 
 import javax.persistence.*;
+import java.util.Set;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -9,28 +10,15 @@ import static javax.persistence.GenerationType.IDENTITY;
  * Created by knoldus on 27/12/16.
  */
 @Entity
-@Table(name = "employee")
-public class Employee {
+@Table(name = "department")
+public class Department {
   @Id @GeneratedValue(strategy = IDENTITY)
   @Column(name = "id")
   private Integer id;
   @Column(name = "name")
   private String name;
-  @Column(name = "age")
-  private Integer age;
-  @Column(name = "sex")
-  private String sex;
-  @ManyToOne(fetch = LAZY, cascade = CascadeType.ALL)
-  @JoinColumn(name = "dept_id")
-  private Department department;
-
-  public Integer getAge() {
-    return age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
-  }
+  @OneToMany(fetch = LAZY, mappedBy = "department")
+  private Set<Employee> employees;
 
   public Integer getId() {
     return id;
@@ -48,29 +36,21 @@ public class Employee {
     this.name = name;
   }
 
-  public String getSex() {
-    return sex;
+  public Set<Employee> getEmployees() {
+    return employees;
   }
 
-  public void setSex(String sex) {
-    this.sex = sex;
-  }
-
-  public Department getDepartment() {
-    return department;
-  }
-
-  public void setDepartment(Department department) {
-    this.department = department;
+  public void setEmployees(Set<Employee> employees) {
+    this.employees = employees;
   }
 
   @Override public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    Employee employee = (Employee) o;
+    Department that = (Department) o;
 
-    return getId() != null ? getId().equals(employee.getId()) : employee.getId() == null;
+    return getId() != null ? getId().equals(that.getId()) : that.getId() == null;
 
   }
 
@@ -80,12 +60,9 @@ public class Employee {
 
   @Override
   public String toString() {
-    return "Employee{" +
+    return "Department{" +
             "id=" + id +
             ", name='" + name + '\'' +
-            ", age=" + age +
-            ", sex='" + sex + '\'' +
-            ", department=" + department +
             '}';
   }
 }
