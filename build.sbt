@@ -17,6 +17,6 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += evolutions
 
-fork in run := true
+//fork in run := true
 
 javaOptions in Test += "-Dconfig.file=conf/application.test.conf"
