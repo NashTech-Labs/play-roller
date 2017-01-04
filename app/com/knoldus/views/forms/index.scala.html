@@ -7,21 +7,6 @@ majors:Map[String,Boolean], webJarAssets: WebJarAssets)
 @import com.knoldus.views.html.bootstrap3._
 
 @main("Index", webJarAssets) {
-@if(flash.containsKey("success")) {
-<div class="well">
-    <div id="success-message" class="text-success">
-        @flash.get("success")
-    </div>
-</div>
-}
-@if(flash.containsKey("error")) {
-<div class="well">
-    <div id="error-message" class="text-danger">
-        @flash.get("error")
-    </div>
-</div>
-}
-
 <div class="container">
     <div class="well">
 
@@ -32,6 +17,20 @@ majors:Map[String,Boolean], webJarAssets: WebJarAssets)
         <div id="legend">
             <legend>Employee Data</legend>
         </div>
+        @if(flash.containsKey("success")) {
+        <div class="well">
+            <div id="success-message" class="text-success">
+                @flash.get("success")
+            </div>
+        </div>
+        }
+        @if(flash.containsKey("error")) {
+        <div class="well">
+            <div id="error-message" class="text-danger">
+                @flash.get("error")
+            </div>
+        </div>
+        }
 
         <!-- Name -->
         @text(employeeForm("name"),
