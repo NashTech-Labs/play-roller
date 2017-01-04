@@ -27,3 +27,13 @@ GET     /webservicesample                       com.knoldus.controllers.webservi
 #Asyncronous programming routes
 GET     /rendercontent/:fileName                com.knoldus.controllers.asynchronous.MyAsyncController.renderFileContent(fileName)
 GET     /calculate                              com.knoldus.controllers.asynchronous.MyAsyncController.calculateDiv(num: Int, den: Int)
+
+
+#Result Types
+GET      /ok                         com.knoldus.controllers.resultHelpers.ResultHelpers.okType
+GET      /notfound                       com.knoldus.controllers.resultHelpers.ResultHelpers.notFoundType
+GET      /pagenotfound                    com.knoldus.controllers.resultHelpers.ResultHelpers.pageNotFoundType
+GET      /badrequest                      com.knoldus.controllers.resultHelpers.ResultHelpers.badRequestType
+GET      /internalservererror                    com.knoldus.controllers.resultHelpers.ResultHelpers.internalServerType
+GET      /status                      com.knoldus.controllers.resultHelpers.ResultHelpers.strangeResponseType
+
