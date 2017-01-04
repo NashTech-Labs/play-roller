@@ -22,4 +22,8 @@ GET     /add-emp                   com.knoldus.controllers.jpa.EmployeeControlle
 GET     /emp-update/:id            com.knoldus.controllers.jpa.EmployeeController.updateEmployee(id: Int)
 
 #WebService routes
-GET     /webservicesample          com.knoldus.controllers.webservice.WebServiceController.fetchViaWebService
+GET     /webservicesample                       com.knoldus.controllers.webservice.WebServiceController.fetchViaWebService
+
+#Asyncronous programming routes
+GET     /rendercontent/:fileName                com.knoldus.controllers.asynchronous.MyAsyncController.renderFileContent(fileName)
+GET     /calculate                              com.knoldus.controllers.asynchronous.MyAsyncController.calculateDiv(num: Int, den: Int)
