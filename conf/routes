@@ -20,3 +20,6 @@ GET     /assets/*file        controllers.Assets.versioned(path="/public", file: 
 #JPA routes
 GET     /add-emp                   com.knoldus.controllers.jpa.EmployeeController.addNewEmployee
 GET     /emp-update/:id            com.knoldus.controllers.jpa.EmployeeController.updateEmployee(id: Int)
+
+#WebService routes
+GET     /webservicesample          com.knoldus.controllers.webservice.WebServiceController.fetchViaWebService
