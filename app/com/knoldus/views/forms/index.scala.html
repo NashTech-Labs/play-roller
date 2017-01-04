@@ -1,0 +1,83 @@
+@(employeeForm: Form[com.knoldus.views.formdata.EmployeeFormData],
+profiles:Map[String,Boolean],
+levels:List[String],
+ctc:Map[String,Boolean],
+majors:Map[String,Boolean], webJarAssets: WebJarAssets)
+
+@import com.knoldus.views.html.bootstrap3._
+
+@main("Index", webJarAssets) {
+<div class="container">
+    <div class="well">
+
+        @helper.form(action = com.knoldus.controllers.forms.routes.EmployeeController.postIndex(), 'class ->
+        "form-horizontal") {
+
+        <!-- Header -->
+        <div id="legend">
+            <legend>Employee Data</legend>
+        </div>
+        @if(flash.containsKey("success")) {
+        <div class="well">
+            <div id="success-message" class="text-success">
+                @flash.get("success")
+            </div>
+        </div>
+        }
+        @if(flash.containsKey("error")) {
+        <div class="well">
+            <div id="error-message" class="text-danger">
+                @flash.get("error")
+            </div>
+        </div>
+        }
+
+        <!-- Name -->
+        @text(employeeForm("name"),
+        label = "Name",
+        placeholder = "My Name",
+        help = "Please enter your first and last name. (required)")
+
+        <!-- Password -->
+        @password(employeeForm("password"),
+        label = "Password",
+        placeholder = "",
+        help = "Password must be five or more characters. (required)")
+
+        <!-- Profiles-->
+        @checkboxes(employeeForm("profiles"),
+        label = "Profile",
+        checkboxMap = profiles,
+        help = "Check zero or more profiles. (optional)")
+
+        <!-- Grade Level -->
+        @radiobuttons(employeeForm("level"),
+        label = "Level",
+        buttonNameList = levels,
+        help = "Select your experience level. (required)")
+
+        <!-- GPA -->
+        @select(employeeForm("ctc"),
+        label = "CTC",
+        optionMap = ctc,
+        isMultiple = false,
+        help = "Select your CTC. (required)")
+
+        <!-- Majors -->
+        @select(employeeForm("majors"),
+        label = "Majors",
+        optionMap = majors,
+        isMultiple = true,
+        help = "Select zero or more majors. (optional)")
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                <button id="cancel" class="btn cancel">Cancel</button>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+}
