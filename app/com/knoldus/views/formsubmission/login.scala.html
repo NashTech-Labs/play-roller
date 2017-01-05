@@ -1,0 +1,32 @@
+@(signInForm:Form[com.knoldus.models.formsubmission.User])
+
+
+<div>
+    @if(flash.containsKey("error")) {
+        <div>
+            @flash.get("error")
+        </div>
+    }
+</div>
+
+<br><br>
+
+@helper.form(action=com.knoldus.controllers.formsubmission.routes.FormSubmissionController.postLogin()){
+<div class="row">
+    @helper.inputText(signInForm("email"),
+    '_showConstraints->true,
+    '_label -> "Email",
+    'placeholder -> "Email",
+    'autocomplete ->"off"
+    )
+
+    @helper.inputPassword(signInForm("password"),
+    '_showConstraints->true,
+    '_label -> "Password",
+    'placeholder -> "Password",
+    'autocomplete ->"off"
+    )
+
+</div>
+<input type="submit" value="Sign In">
+}
