@@ -37,3 +37,6 @@ GET      /badrequest                      com.knoldus.controllers.resultHelpers.
 GET      /internalservererror                    com.knoldus.controllers.resultHelpers.ResultHelpers.internalServerType
 GET      /status                      com.knoldus.controllers.resultHelpers.ResultHelpers.strangeResponseType
 
+#upload
+GET     /upload                   com.knoldus.controllers.upload.UploadController.upload
+POST    /process                   com.knoldus.controllers.upload.UploadController.doUpload
