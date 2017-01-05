@@ -32,6 +32,11 @@ GET     /calculate                              com.knoldus.controllers.asynchro
 GET     /callbackwebsocket                      com.knoldus.controllers.websockets.CallbackWebSocketsController.socket
 GET     /actorwebsocket                         com.knoldus.controllers.websockets.AkkaWebSocketsController.socket
 
+#Form rendring routes
+GET     /signin                                 com.knoldus.controllers.formsubmission.FormSubmissionController.login
+POST    /wrongcredentials                       com.knoldus.controllers.formsubmission.FormSubmissionController.postLogin
+GET     /success                                com.knoldus.controllers.formsubmission.FormSubmissionController.loginSuccess
+GET     /logout                                 com.knoldus.controllers.formsubmission.FormSubmissionController.logout
 
 
 #Result Types
