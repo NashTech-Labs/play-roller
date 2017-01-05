@@ -27,3 +27,8 @@ GET     /webservicesample                       com.knoldus.controllers.webservi
 #Asyncronous programming routes
 GET     /rendercontent/:fileName                com.knoldus.controllers.asynchronous.MyAsyncController.renderFileContent(fileName)
 GET     /calculate                              com.knoldus.controllers.asynchronous.MyAsyncController.calculateDiv(num: Int, den: Int)
+
+#Web Sockets
+GET     /callbackwebsocket                      com.knoldus.controllers.websockets.CallbackWebSocketsController.socket
+GET     /actorwebsocket                         com.knoldus.controllers.websockets.AkkaWebSocketsController.socket
+
