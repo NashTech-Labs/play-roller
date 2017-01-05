@@ -34,8 +34,9 @@ GET     /actorwebsocket                         com.knoldus.controllers.websocke
 
 #Form rendring routes
 GET     /signin                                 com.knoldus.controllers.formsubmission.FormSubmissionController.login
-POST     /signout                                com.knoldus.controllers.formsubmission.FormSubmissionController.postLogin
-GET     /logout                                com.knoldus.controllers.formsubmission.FormSubmissionController.logout
+POST    /wrongcredentials                       com.knoldus.controllers.formsubmission.FormSubmissionController.postLogin
+GET     /success                                com.knoldus.controllers.formsubmission.FormSubmissionController.loginSuccess
+GET     /logout                                 com.knoldus.controllers.formsubmission.FormSubmissionController.logout
 
 
 #Result Types

@@ -47,8 +47,12 @@ public class FormSubmissionController extends Controller {
             // email/password OK, so now we set the session variable and only go to authenticated pages.
             session().clear();
             session("email", userForm.get().getEmail());
-            return ok(com.knoldus.views.html.formsubmission.successfulLogin.render(session("email")));
+            return redirect(com.knoldus.controllers.formsubmission.routes.FormSubmissionController.loginSuccess());
         }
+    }
+
+    public Result loginSuccess(){
+        return ok(com.knoldus.views.html.formsubmission.successfulLogin.render(session("email")));
     }
 
     public Result logout() {
