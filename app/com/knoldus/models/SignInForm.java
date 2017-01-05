@@ -5,7 +5,6 @@ import play.data.validation.Constraints;
 public class SignInForm {
 
   @Constraints.Required(message = "validation.required")
-/*  @Constraints.Email(message = "validation.email")*/
   @Constraints.MaxLength(value = 100, message = "validation.maxLength") private String email;
 
   @Constraints.Required(message = "validation.required")
