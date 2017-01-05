@@ -8,8 +8,9 @@ import com.knoldus.models.formsubmission.User;
 public class FormSubmissionService {
 
     public Boolean validateCredentials(User user) {
-        if (user.getPassword() == "workshop") {
+        if (user.getPassword().equals("workshop")) {
             return true;
-        } else return false;
+        }
+        return false;
     }
 }

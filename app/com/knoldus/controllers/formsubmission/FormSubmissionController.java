@@ -36,10 +36,10 @@ public class FormSubmissionController extends Controller {
 
         Form<User> userForm = formFactory.form(User.class).bindFromRequest();
         if (userForm.hasErrors()) {
-            flash("error", "Login credentials not valid.");
+            flash("error", userForm.globalError().message());
             return badRequest(com.knoldus.views.html.formsubmission.login.render(userForm));
         }
-        else if (service.validateCredentials(userForm.get())) {
+        else if (!service.validateCredentials(userForm.get())) {
             flash("error", "Credentials dont match");
             return badRequest(com.knoldus.views.html.formsubmission.login.render(userForm));
         }

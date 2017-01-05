@@ -17,7 +17,7 @@ public class User {
             return "The email address is not in correct format";
         }
         else if (password.length() < 5) {
-            return "Length of password must be atleast 10 characters";
+            return "Length of password must be atleast 5 characters";
         }
         return null;
     }
