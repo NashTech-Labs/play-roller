@@ -37,3 +37,7 @@ GET      /badrequest                      com.knoldus.controllers.resultHelpers.
 GET      /internalservererror                    com.knoldus.controllers.resultHelpers.ResultHelpers.internalServerType
 GET      /status                      com.knoldus.controllers.resultHelpers.ResultHelpers.strangeResponseType
 
+#forms
+GET     /signin                   com.knoldus.controllers.forms.SignInController.doSignIn
+POST    /signed                   com.knoldus.controllers.forms.SignInController.signIn
+
