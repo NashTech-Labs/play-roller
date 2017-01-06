@@ -1,0 +1,31 @@
+@main("Upload"){
+<div>
+    <h1>File Upload</h1>
+</div>
+<div class="row">
+    @if(flash.containsKey("success")) {
+    <div class="well">
+        <div id="success-message" class="text-success">
+            <h3>@flash.get("success")</h3>
+        </div>
+    </div>
+    }
+    @if(flash.containsKey("error")) {
+    <div class="well">
+        <div id="error-message" class="text-danger">
+            <h3>@flash.get("error")</h3>
+        </div>
+    </div>
+    }
+</div>
+
+<div class="row">
+    @helper.form(action =com.knoldus.controllers.upload.routes.UploadController.doUpload(),'enctype
+    -> "multipart/form-data") {
+    <input type="file" name="picture">
+    <p>
+        <input type="submit">
+    </p>
+    }
+</div>
+}
