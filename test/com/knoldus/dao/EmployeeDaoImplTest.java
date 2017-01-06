@@ -20,6 +20,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsCollectionContaining.hasItems;
 
 /**
  * Created by harmeet on 29/12/16.
